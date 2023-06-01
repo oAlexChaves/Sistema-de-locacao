@@ -7,6 +7,7 @@ def login():
     
     if verificar_credenciais(usuario, senha):
         print("Login bem-sucedido!")
+        return True
     else:
         print("Credenciais inválidas.")
 
