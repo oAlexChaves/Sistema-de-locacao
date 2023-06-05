@@ -1,4 +1,5 @@
 import login
+import json
 
 def exibir_agenda():
     with open('agenda.txt', 'r') as arquivo:
@@ -64,8 +65,10 @@ while login.login():
         print("1. Exibir agenda")
         print("2. Agendar horário")
         print("3. Remover agendamento")
-        print("4. Sair")
-
+        print("4. Remover Usuario")
+        print("5. Alterar Senha")
+        print("6. Sair")
+        
         opcao = input("Digite o número da opção desejada: ")
 
         if opcao == "1":
@@ -75,6 +78,10 @@ while login.login():
         elif opcao == "3":
             remover_agendamento()
         elif opcao == "4":
+            remover_usuario()
+        elif opcao == "5":
+            alterar_senha()
+        elif opcao == "6":
             break
         else:
             print("Opção inválida. Digite novamente.")
