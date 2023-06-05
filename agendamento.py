@@ -36,13 +36,35 @@ def agendar_horario():
             arquivo.truncate()
         print("Horário agendado com sucesso!")
 
+
+def remover_agendamento():
+    sala = input("Digite o número da sala do agendamento que deseja remover: ")
+    horario = input("Digite o horário do agendamento que deseja remover (hh:mm): ")
+
+    with open('agenda.txt', 'r') as arquivo:
+        linhas = arquivo.readlines()
+
+    with open('agenda.txt', 'w') as arquivo:
+        remover_linha = False
+        for i, linha in enumerate(linhas):
+            if sala in linha:
+                remover_linha = True
+            elif remover_linha and horario in linha:
+                remover_linha = False
+                continue
+            arquivo.write(linha)
+
+    print("Agendamento removido com sucesso!")
+
+
 # Exibindo menu de opções
 while login.login():
     while True:
         print("\nMenu:")
         print("1. Exibir agenda")
-        print("2. Age3ndar horário")
-        print("3. Sair")
+        print("2. Agendar horário")
+        print("3. Remover agendamento")
+        print("4. Sair")
 
         opcao = input("Digite o número da opção desejada: ")
 
@@ -51,6 +73,8 @@ while login.login():
         elif opcao == "2":
             agendar_horario()
         elif opcao == "3":
+            remover_agendamento()
+        elif opcao == "4":
             break
         else:
             print("Opção inválida. Digite novamente.")
