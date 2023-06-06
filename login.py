@@ -1,5 +1,6 @@
 from getpass import getpass
 import json
+usuario = ""
 
 def login():
     print("Bem-vindo! Por favor, faça login:")

@@ -1,10 +1,13 @@
 Sala 1: 
 10:30 - Maria
+18:30 - Geraldo
 16:00 - Flavio
 
 Sala 2: 
-14:00 - Pedro
+14:00 - José 
 
 Sala 3: 
+18:30 - Geraldo
 16:00 - Flavio
 15:30 - Ana
+18:30 - Geraldo
