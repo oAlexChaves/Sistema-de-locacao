@@ -1,6 +1,5 @@
-from login import login, remover_usuario, alterar_senha, usuario
-import json
-
+import login
+#exibi a agenda na tela 
 def exibir_agenda():
     with open('agenda.txt', 'r') as arquivo:
         agenda = arquivo.read()
@@ -9,7 +8,7 @@ def exibir_agenda():
             print(agenda)
         else:
             print("Agenda vazia.")
-
+#verifica a disponibilidade da sala para o agendamento
 def verificar_disponibilidade(sala, horario):
     with open('agenda.txt', 'r') as arquivo:
         agenda = arquivo.readlines()
@@ -20,7 +19,7 @@ def verificar_disponibilidade(sala, horario):
                     print(f"A Sala {sala} está ocupada nesse horário.")
                     return False
         return True
-
+#agenda na sala o horario desejado
 def agendar_horario():
     sala = input("Digite o número da sala que deseja agendar: ")
     nome = input("Digite o seu nome: ")
@@ -37,7 +36,7 @@ def agendar_horario():
             arquivo.truncate()
         print("Horário agendado com sucesso!")
 
-
+#exclui o horario da agenda 
 def remover_agendamento():
     sala = input("Digite o número da sala do agendamento que deseja remover: ")
     horario = input("Digite o horário do agendamento que deseja remover (hh:mm): ")
@@ -58,15 +57,15 @@ def remover_agendamento():
     print("Agendamento removido com sucesso!")
 
 
-# Exibindo menu de opções
-while login():
+# Exibe menu de opções
+while login.login():
     while True:
         print("\nMenu:")
         print("1. Exibir agenda")
         print("2. Agendar horário")
         print("3. Remover agendamento")
         print("4. Sair")
-        
+
         opcao = input("Digite o número da opção desejada: ")
 
         if opcao == "1":
@@ -77,10 +76,6 @@ while login():
             remover_agendamento()
         elif opcao == "4":
             break
-#        elif opcao == "5":
-#           alterar_senha()
-#        elif opcao == "6":
-#            break
         else:
             print("Opção inválida. Digite novamente.")
 
