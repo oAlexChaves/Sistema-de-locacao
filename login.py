@@ -1,5 +1,6 @@
 from getpass import getpass
 
+#função de login que exibe inputs para credenciais e que retorna resposta
 def login():
     print("Bem-vindo! Por favor, faça login:")
     usuario = input("Usuário: ")
@@ -10,7 +11,7 @@ def login():
         return True
     else:
         print("Credenciais inválidas.")
-
+#verifica a validade das credenciais
 def verificar_credenciais(usuario, senha):
     try:
         with open("credenciais.txt", "r") as arquivo:

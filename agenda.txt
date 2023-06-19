@@ -1,10 +1,9 @@
 Sala 1: 
 10:30 - Maria
-16:00 - Flavio
 
 Sala 2: 
+15:00 - Jorge
 14:00 - Pedro
 
 Sala 3: 
-16:00 - Flavio
 15:30 - Ana
